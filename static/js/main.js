@@ -154,10 +154,8 @@ $(document).ready(function () {
         }
     });
 
-
-
-
-
-
+     $('#list-form-btn').on("click", function () {
+         $('#list-form-file').click();
+        });
 
 });

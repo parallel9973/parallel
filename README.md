@@ -17,15 +17,15 @@ Framework Structure
 
     parallel
     ├── ...
-    ├── insights                # 인사이트 아티클 관리
+    ├── core                    # 메인 페이지
     │   ├── benchmarks          # Load and stress tests
     │   ├── integration         # End-to-end, integration tests (alternatively `e2e`)
     │   └── unit                # Unit tests
     ├── delorean                # 백테스터
-    ├── sauron                  # 페어 파인더
-    │   ├── benchmarks          # Load and stress tests
-    │   ├── integration         # End-to-end, integration tests (alternatively `e2e`)
-    │   └── unit                # Unit tests
+    ├── portfolio               # 기본 파일
+    │   ├── settings          # Load and stress tests
+    │   ├── urls         # End-to-end, integration tests (alternatively `e2e`)
+    │   └── wsgi                # Unit tests
     ├── parallel                # 메인 폴더
     ├── db.sqlite3              # DB
     ├── README.md               # 설명서

@@ -13,3 +13,12 @@ class HomeTemplateView(TemplateView):
         context['services'] = Service.objects.all()
         context['works'] = RecentWork.objects.all()
         return context
+
+class DeloreanTemplateView(TemplateView):
+    """
+    Delorean 템플릿 뷰
+    """
+    template_name = 'delorean.html'
+
+
+
