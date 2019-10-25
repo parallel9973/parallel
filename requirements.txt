@@ -5,6 +5,7 @@ celery==4.3.0
 certifi==2019.9.11
 chardet==3.0.4
 cycler==0.10.0
+dj-database-url==0.5.0
 Django==2.2.6
 et-xmlfile==1.0.1
 idna==2.8
@@ -16,9 +17,11 @@ matplotlib==3.1.1
 more-itertools==7.2.0
 numpy==1.17.3
 openpyxl==3.0.0
+pairfinder==1.0.2
 pandas==0.25.2
 patsy==0.5.1
 Pillow==6.2.1
+psycopg2-binary==2.8.4
 pykalman==0.9.5
 pyparsing==2.4.2
 python-dateutil==2.8.0
@@ -33,7 +36,8 @@ statsmodels==0.10.1
 tqdm==4.36.1
 urllib3==1.25.6
 vine==1.3.0
+whitenoise==4.1.4
+wincertstore==0.2
 XlsxWriter==1.2.2
 yahoofinancials==1.5
 zipp==0.6.0
-pairfinder==1.0.2
