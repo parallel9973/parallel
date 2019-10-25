@@ -41,14 +41,24 @@ def upload_xlsx(request):
         return render(request, template_name, {})
     else:
         user_excel_file = request.FILES["excel_file"]
-        user_pair_list = pd.read_excel(user_excel_file, engine='openpyxl')
+        user_pair_list = pd.read_excel(user_excel_file, engine='openpyxl', sheet_name='List')
+        user_pair_settings = pd.read_excel(user_excel_file, engine='openpyxl', sheet_name='Settings')
+
+    # 설정값
+    user_settings = {
+        'window': int(user_pair_settings.iloc[2, 2]),
+        'analysis': (pd.to_datetime(user_pair_settings.iloc[0, 2]).strftime("%Y-%m-%d"),
+                     pd.to_datetime(user_pair_settings.iloc[1, 2]).strftime("%Y-%m-%d")),
+        'plot': (pd.to_datetime(user_pair_settings.iloc[0, 5]).strftime("%Y-%m-%d"),
+                 pd.to_datetime(user_pair_settings.iloc[1, 5]).strftime("%Y-%m-%d")),
+    }
 
     # 경로 설정
     timestamp = str(datetime.now().timestamp())
     outpath = os.path.join(settings.MEDIA_ROOT, 'temp', timestamp)
 
     # 피어 분석
-    peer_group = PeerGroup()
+    peer_group = PeerGroup(params=user_settings)
     peer_group.set_peer_group(peer_group=user_pair_list)
     peer_group.analyze(filter_ks=True)
     peer_group.summarize(outpath=outpath)
