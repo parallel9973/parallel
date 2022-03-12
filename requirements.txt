@@ -20,7 +20,7 @@ openpyxl==3.0.0
 pairfinder==1.0.2
 pandas==0.25.2
 patsy==0.5.1
-Pillow==6.2.1
+Pillow==9.0.1
 psycopg2-binary==2.8.4
 pykalman==0.9.5
 pyparsing==2.4.2
